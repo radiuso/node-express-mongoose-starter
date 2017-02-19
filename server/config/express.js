@@ -21,7 +21,7 @@ const flash = require('connect-flash');
 const winston = require('winston');
 const helpers = require('view-helpers');
 const config = require('./');
-const pkg = require('../package.json');
+const pkg = require('../../package.json');
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -39,7 +39,7 @@ module.exports = function (app, passport) {
   app.use(cors());
 
   // Static files middleware
-  app.use(express.static(config.root + '/public'));
+  app.use(express.static(config.root + '/../public'));
 
   // Use winston on production
   let log = 'dev';
